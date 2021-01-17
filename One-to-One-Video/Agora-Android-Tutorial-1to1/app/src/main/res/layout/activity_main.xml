@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@android:color/holo_blue_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/channelname"
+            android:layout_margin="20dp"
+            android:background="@android:color/white"
+            android:hint="Enter Channel Name"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/token"
+            android:layout_margin="20dp"
+            android:background="@android:color/white"
+            android:hint="Enter Token"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/get"
+            android:background="@android:color/background_dark"
+            android:layout_margin="50dp"
+            android:text="Join"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,6 +1,7 @@
 package io.agora.tutorials1v1vcall;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -53,7 +54,6 @@ public class VideoChatViewActivity extends AppCompatActivity {
 
     // Customized logger view
     private LoggerRecyclerView mLogView;
-
     /**
      * Event handler registered into RTC engine for RTC callbacks.
      * Note that UI operations needs to be in UI thread because RTC
@@ -305,11 +305,14 @@ public class VideoChatViewActivity extends AppCompatActivity {
         // same channel successfully using the same app id.
         // 2. One token is only valid for the channel name that
         // you use to generate this token.
-        String token = getString(R.string.agora_access_token);
-        if (TextUtils.isEmpty(token) || TextUtils.equals(token, "#YOUR ACCESS TOKEN#")) {
-            token = null; // default, no token
-        }
-        mRtcEngine.joinChannel(token, "demoChannel1", "Extra Optional Data", 0);
+        Intent intent = getIntent();
+        String token = intent.getStringExtra("Token");
+        String channel = intent.getStringExtra("Channel");
+//        String token = getString(R.string.agora_access_token);
+//        if (TextUtils.isEmpty(token) || TextUtils.equals(token, String.valueOf(R.string.agora_access_token))) {
+//            token = getString(R.string.agora_access_token); // default, no token
+//        }
+        mRtcEngine.joinChannel(token, channel, "Extra Optional Data", 0);
     }
 
     @Override
